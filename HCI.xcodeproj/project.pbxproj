@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0268B5AE1B4B7FCF00AF5C11 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5AD1B4B7FCF00AF5C11 /* main.cpp */; };
+		0268B5B51B4B822100AF5C11 /* libBox2D.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B41B4B822100AF5C11 /* libBox2D.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		0268B5B71B4B823B00AF5C11 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */; };
+		0268B5B91B4B824500AF5C11 /* libopencv_highgui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B81B4B824500AF5C11 /* libopencv_highgui.dylib */; };
+		0268B5BB1B4B824D00AF5C11 /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */; };
+		0268B5BE1B4B82A400AF5C11 /* InfoExtract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5BC1B4B82A400AF5C11 /* InfoExtract.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,12 @@
 /* Begin PBXFileReference section */
 		0268B5AA1B4B7FCF00AF5C11 /* HCI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HCI; sourceTree = BUILT_PRODUCTS_DIR; };
 		0268B5AD1B4B7FCF00AF5C11 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0268B5B41B4B822100AF5C11 /* libBox2D.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libBox2D.dylib; path = ../../../../usr/local/Cellar/box2d/2.3.0/lib/libBox2D.dylib; sourceTree = "<group>"; };
+		0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = ../../../../usr/local/Cellar/opencv/2.4.11_1/lib/libopencv_core.dylib; sourceTree = "<group>"; };
+		0268B5B81B4B824500AF5C11 /* libopencv_highgui.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.dylib; path = ../../../../usr/local/Cellar/opencv/2.4.11_1/lib/libopencv_highgui.dylib; sourceTree = "<group>"; };
+		0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.dylib; path = ../../../../usr/local/Cellar/opencv/2.4.11_1/lib/libopencv_imgproc.dylib; sourceTree = "<group>"; };
+		0268B5BC1B4B82A400AF5C11 /* InfoExtract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoExtract.cpp; sourceTree = "<group>"; };
+		0268B5BD1B4B82A400AF5C11 /* InfoExtract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoExtract.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0268B5B51B4B822100AF5C11 /* libBox2D.dylib in Frameworks */,
+				0268B5B71B4B823B00AF5C11 /* libopencv_core.dylib in Frameworks */,
+				0268B5B91B4B824500AF5C11 /* libopencv_highgui.dylib in Frameworks */,
+				0268B5BB1B4B824D00AF5C11 /* libopencv_imgproc.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +56,10 @@
 		0268B5A11B4B7FCF00AF5C11 = {
 			isa = PBXGroup;
 			children = (
+				0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */,
+				0268B5B81B4B824500AF5C11 /* libopencv_highgui.dylib */,
+				0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */,
+				0268B5B41B4B822100AF5C11 /* libBox2D.dylib */,
 				0268B5AC1B4B7FCF00AF5C11 /* HCI */,
 				0268B5AB1B4B7FCF00AF5C11 /* Products */,
 			);
@@ -58,8 +77,18 @@
 			isa = PBXGroup;
 			children = (
 				0268B5AD1B4B7FCF00AF5C11 /* main.cpp */,
+				0268B5BF1B4B857700AF5C11 /* InfoExtract */,
 			);
 			path = HCI;
+			sourceTree = "<group>";
+		};
+		0268B5BF1B4B857700AF5C11 /* InfoExtract */ = {
+			isa = PBXGroup;
+			children = (
+				0268B5BC1B4B82A400AF5C11 /* InfoExtract.cpp */,
+				0268B5BD1B4B82A400AF5C11 /* InfoExtract.h */,
+			);
+			name = InfoExtract;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0268B5AE1B4B7FCF00AF5C11 /* main.cpp in Sources */,
+				0268B5BE1B4B82A400AF5C11 /* InfoExtract.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +235,17 @@
 		0268B5B21B4B7FCF00AF5C11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/local/Cellar/opencv/**",
+					"/usr/local/Cellar/box2d/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/box2d/2.3.0/lib,
+					/usr/local/Cellar/opencv/2.4.11_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +253,17 @@
 		0268B5B31B4B7FCF00AF5C11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/local/Cellar/opencv/**",
+					"/usr/local/Cellar/box2d/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/box2d/2.3.0/lib,
+					/usr/local/Cellar/opencv/2.4.11_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
