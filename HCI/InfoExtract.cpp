@@ -51,3 +51,12 @@ void InfoExtract::extPidThr(std::vector<std::string>& procDetail)
 {
     procDetail.erase(procDetail.begin()+1, procDetail.end()-1);
 }
+
+void InfoExtract::excSlash(std::string& threadLine)
+{
+    std::string tmp = threadLine;
+    
+    std::istringstream iss(tmp);
+    
+    std::getline(iss, threadLine, '/');
+}

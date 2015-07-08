@@ -13,6 +13,9 @@
 		0268B5B91B4B824500AF5C11 /* libopencv_highgui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B81B4B824500AF5C11 /* libopencv_highgui.dylib */; };
 		0268B5BB1B4B824D00AF5C11 /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */; };
 		0268B5BE1B4B82A400AF5C11 /* InfoExtract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5BC1B4B82A400AF5C11 /* InfoExtract.cpp */; };
+		0268B5C31B4BB25500AF5C11 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5C11B4BB25500AF5C11 /* Particle.cpp */; };
+		0268B5C71B4BC49C00AF5C11 /* Enclosure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5C51B4BC49C00AF5C11 /* Enclosure.cpp */; };
+		0268B5D91B4D0D8600AF5C11 /* Visualize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5D71B4D0D8600AF5C11 /* Visualize.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +39,12 @@
 		0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.dylib; path = ../../../../usr/local/Cellar/opencv/2.4.11_1/lib/libopencv_imgproc.dylib; sourceTree = "<group>"; };
 		0268B5BC1B4B82A400AF5C11 /* InfoExtract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InfoExtract.cpp; sourceTree = "<group>"; };
 		0268B5BD1B4B82A400AF5C11 /* InfoExtract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoExtract.h; sourceTree = "<group>"; };
+		0268B5C11B4BB25500AF5C11 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
+		0268B5C21B4BB25500AF5C11 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		0268B5C51B4BC49C00AF5C11 /* Enclosure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enclosure.cpp; sourceTree = "<group>"; };
+		0268B5C61B4BC49C00AF5C11 /* Enclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enclosure.h; sourceTree = "<group>"; };
+		0268B5D71B4D0D8600AF5C11 /* Visualize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visualize.cpp; sourceTree = "<group>"; };
+		0268B5D81B4D0D8600AF5C11 /* Visualize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visualize.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				0268B5AD1B4B7FCF00AF5C11 /* main.cpp */,
+				0268B5D61B4D0D5500AF5C11 /* Visualize */,
+				0268B5C41B4BC46900AF5C11 /* Enclosure */,
+				0268B5C01B4BB22E00AF5C11 /* Particle */,
 				0268B5BF1B4B857700AF5C11 /* InfoExtract */,
 			);
 			path = HCI;
@@ -89,6 +101,33 @@
 				0268B5BD1B4B82A400AF5C11 /* InfoExtract.h */,
 			);
 			name = InfoExtract;
+			sourceTree = "<group>";
+		};
+		0268B5C01B4BB22E00AF5C11 /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				0268B5C11B4BB25500AF5C11 /* Particle.cpp */,
+				0268B5C21B4BB25500AF5C11 /* Particle.h */,
+			);
+			name = Particle;
+			sourceTree = "<group>";
+		};
+		0268B5C41B4BC46900AF5C11 /* Enclosure */ = {
+			isa = PBXGroup;
+			children = (
+				0268B5C51B4BC49C00AF5C11 /* Enclosure.cpp */,
+				0268B5C61B4BC49C00AF5C11 /* Enclosure.h */,
+			);
+			name = Enclosure;
+			sourceTree = "<group>";
+		};
+		0268B5D61B4D0D5500AF5C11 /* Visualize */ = {
+			isa = PBXGroup;
+			children = (
+				0268B5D71B4D0D8600AF5C11 /* Visualize.cpp */,
+				0268B5D81B4D0D8600AF5C11 /* Visualize.h */,
+			);
+			name = Visualize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0268B5D91B4D0D8600AF5C11 /* Visualize.cpp in Sources */,
 				0268B5AE1B4B7FCF00AF5C11 /* main.cpp in Sources */,
+				0268B5C31B4BB25500AF5C11 /* Particle.cpp in Sources */,
+				0268B5C71B4BC49C00AF5C11 /* Enclosure.cpp in Sources */,
 				0268B5BE1B4B82A400AF5C11 /* InfoExtract.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +329,7 @@
 				0268B5B31B4B7FCF00AF5C11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

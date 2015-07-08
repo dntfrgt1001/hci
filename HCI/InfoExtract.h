@@ -25,10 +25,10 @@ public:
     void split(std::string& line, std::vector<std::string>& splitted,
                char sep);
     void extPidThr(std::vector<std::string>& procDetail);
+    void excSlash(std::string& threadLine);
 private:
     std::string filePath;
     std::ifstream* ifs;
-//    enum pcActivity {PID, COMMOND, CPU, TIME, TH};
 };
 
 
