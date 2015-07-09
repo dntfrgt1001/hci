@@ -13,6 +13,7 @@
 #include "InfoExtract.h"
 #include "Particle.h"
 #include "Enclosure.h"
+#include "Visualize.h"
 
 int pixel = 100;
 
@@ -24,7 +25,7 @@ int main(int argc, const char * argv[])
     
     InfoExtract ie(filePath);
     
-    std::vector<std::vector<std::string>> procInfo;
+    std::vector<std::vector<int>> info;
     
     char seperator = ' ';
     
@@ -32,38 +33,83 @@ int main(int argc, const char * argv[])
     
     for(int i=0; i<infoNum; i++){
         std::string procLine;
-        std::vector<std::string> procDetail;
+        std::vector<std::string> procExtStr;
+        std::vector<int> procExtInt;
         
         ie.getLine(procLine);
-        ie.split(procLine, procDetail, seperator);
-        ie.extPidThr(procDetail);
+        ie.split(procLine, procExtStr, seperator);
+        ie.extPidTh(procExtStr);
+        ie.excSlash(procExtStr[1]);
+        ie.strToInt(procExtStr, procExtInt);
         
-        procInfo.push_back(procDetail);
+        info.push_back(procExtInt);
     }
     
     
     for(int i=0; i<infoNum; i++){
-        ie.excSlash(procInfo[i][1]);
-        
         for(int j=0; j<2; j++){
-            std::cout << procInfo[i][j] << "  ";
+            std::cout << info[i][j] << "  ";
         }
         std::cout << std::endl;
     }
     
+    
     float32 timeStep = 1.0f/60.0f;
-    int32 velocityIterations = 10;
+    int32 velocityIterations = 8;
     int32 positionIterations = 3;
     
     b2Vec2 gravity(0.0f, 0.0f);
     b2World world(gravity);
     
-    const int width = 640;
-    const int height = 480;
+    const int width = 1280;
+    const int height = 720;
     
     cv::Mat img;
     cv::namedWindow("window", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
     
+    
+    std::vector<Visualize*> vis;
+    int number = 4;
+    for(int i=0; i<number; i++){
+        vis.push_back(new Visualize(world, info[i][0], info[i][1],
+                                   width*i/number+width/number/2,
+                                    height/2, 5, 150));
+        //Visualize vi(world, info[0][0], info[0][1], width/2, height/2, 10, 150);
+    }
+    
+    for(int i=0; i<10; i++)
+        world.Step(timeStep, velocityIterations, positionIterations);
+    for(int i=0; i<vis.size(); i++)
+        vis[i]->velocityCorrection();
+    
+    int loopCount = 1;
+    while(true){
+        world.Step(timeStep, velocityIterations, positionIterations);
+        
+        img = cv::Mat(cv::Size(width, height), CV_8UC3,
+                      cv::Scalar(255, 255, 255));
+        
+        for(int i=0; i<vis.size(); i++){
+            vis[i]->draw(img);
+        
+            if(loopCount%100 == 0){
+                vis[i]->velocityCorrection();
+            }
+        }
+        if(loopCount >= 10000)
+            loopCount = 0;
+        
+        loopCount++;
+        
+        cv::imshow("window", img);
+        if(cv::waitKey(10)>0)
+            break;
+    }
+    
+    for(int i=0; i<vis.size(); i++)
+        delete vis[i];
+    
+/*
     int encX = width / 2;
     int encY = height / 2;
     int encRadius = 60;
@@ -83,7 +129,6 @@ int main(int argc, const char * argv[])
         parts.push_back(tmpPart);
     }
     
-    
     int loopCount = 0;
     while(true){
         world.Step(timeStep, velocityIterations, positionIterations);
@@ -102,22 +147,6 @@ int main(int argc, const char * argv[])
             Particle::velocityCollection(parts, partVelocity);
         }
         
-//        std::cout << "energy = " << energy << std::endl;
-        
-//        if(loopCount % 1000 == 0)
-            
-/*
-        b2Vec2 vec1 = parts[0]->getVelocity();
-        b2Vec2 vec2 = vec1;
-        vec2 *= pixel;
-        
-        std::cout << "vec1 length = " << vec1.Length() << "  ";
-        std::cout << "vec2 length = " << vec2.Length() << "  ";
-        std::cout << std::endl;
-*/
- //        std::cout << "vec1 = (" << vec1.x << ", " << vec1.y << "),  ";
-//        std::cout << "vec2 = (" << vec2.x << ", " << vec2.y << ")" << std::endl;
-
         
         enc.draw(img);
         
@@ -134,6 +163,7 @@ int main(int argc, const char * argv[])
     for(int i=0; i<partNum; i++){
         delete parts[i];
     }
+*/
     
     return 0;
 }

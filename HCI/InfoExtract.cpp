@@ -47,9 +47,10 @@ void InfoExtract::split(std::string& line,
     }
 }
 
-void InfoExtract::extPidThr(std::vector<std::string>& procDetail)
+void InfoExtract::extPidTh(std::vector<std::string>& procDetail)
 {
     procDetail.erase(procDetail.begin()+1, procDetail.end()-1);
+    
 }
 
 void InfoExtract::excSlash(std::string& threadLine)
@@ -59,4 +60,12 @@ void InfoExtract::excSlash(std::string& threadLine)
     std::istringstream iss(tmp);
     
     std::getline(iss, threadLine, '/');
+}
+
+void InfoExtract::strToInt(std::vector<std::string>& procExtStr,
+                           std::vector<int>& procExtInt)
+{
+    for(int i=0; i<procExtStr.size(); i++){
+        procExtInt.push_back(std::stoi(procExtStr[i]));
+    }
 }

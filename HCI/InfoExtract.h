@@ -24,8 +24,10 @@ public:
     void getLine(std::string& line);
     void split(std::string& line, std::vector<std::string>& splitted,
                char sep);
-    void extPidThr(std::vector<std::string>& procDetail);
+    void extPidTh(std::vector<std::string>& procExtStr);
     void excSlash(std::string& threadLine);
+    void strToInt(std::vector<std::string>& procExtStr,
+               std::vector<int>& procExtInt);
 private:
     std::string filePath;
     std::ifstream* ifs;

@@ -13,15 +13,17 @@
 #include <opencv2/core/core.hpp>
 #include "Particle.h"
 #include "Enclosure.h"
+#include "DisplayText.h"
 
 class Visualize
 {
 public:
     Visualize(){};
     Visualize(b2World& world, int pid, int number,
-              int x, int y, int radius);
+              int x, int y, int partRadius, int partV);
     ~Visualize();
     void draw(cv::Mat& img);
+    void velocityCorrection();
     
 private:
     int pid;
@@ -29,8 +31,10 @@ private:
     int x;
     int y;
     int radius;
+    int partV;
     Enclosure* enc;
     std::vector<Particle*> parts;
+    DisplayText* dt;
 };
 
 #endif /* defined(__HCI__Visualize__) */

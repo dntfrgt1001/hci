@@ -20,14 +20,14 @@ class Particle
 {
 public:
     Particle(){};
-    Particle(b2World& world, int x, int y, int radius);
+    Particle(b2World& world, int initX, int initY, int radius, int initV);
     ~Particle();
     void setVelocity(int velocityX, int velocityY);
     b2Vec2 getPosition();
     int getRadius();
     b2Vec2 getVelocity();
     void draw(cv::Mat& img);
-    static void velocityCollection(std::vector<Particle*>& parts, int partVelocity);
+    static void velocityCorrection(std::vector<Particle*>& parts, int partVelocity);
 private:
     cv::Scalar color;
     b2Body* body;

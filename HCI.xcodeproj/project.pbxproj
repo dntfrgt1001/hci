@@ -16,6 +16,7 @@
 		0268B5C31B4BB25500AF5C11 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5C11B4BB25500AF5C11 /* Particle.cpp */; };
 		0268B5C71B4BC49C00AF5C11 /* Enclosure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5C51B4BC49C00AF5C11 /* Enclosure.cpp */; };
 		0268B5D91B4D0D8600AF5C11 /* Visualize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5D71B4D0D8600AF5C11 /* Visualize.cpp */; };
+		0268B5DF1B4E46C400AF5C11 /* DisplayText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5DD1B4E46C400AF5C11 /* DisplayText.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,8 @@
 		0268B5C61B4BC49C00AF5C11 /* Enclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enclosure.h; sourceTree = "<group>"; };
 		0268B5D71B4D0D8600AF5C11 /* Visualize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visualize.cpp; sourceTree = "<group>"; };
 		0268B5D81B4D0D8600AF5C11 /* Visualize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visualize.h; sourceTree = "<group>"; };
+		0268B5DD1B4E46C400AF5C11 /* DisplayText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisplayText.cpp; sourceTree = "<group>"; };
+		0268B5DE1B4E46C400AF5C11 /* DisplayText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayText.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0268B5AD1B4B7FCF00AF5C11 /* main.cpp */,
+				0268B5DC1B4E469B00AF5C11 /* DisplayText */,
 				0268B5D61B4D0D5500AF5C11 /* Visualize */,
 				0268B5C41B4BC46900AF5C11 /* Enclosure */,
 				0268B5C01B4BB22E00AF5C11 /* Particle */,
@@ -128,6 +132,15 @@
 				0268B5D81B4D0D8600AF5C11 /* Visualize.h */,
 			);
 			name = Visualize;
+			sourceTree = "<group>";
+		};
+		0268B5DC1B4E469B00AF5C11 /* DisplayText */ = {
+			isa = PBXGroup;
+			children = (
+				0268B5DD1B4E46C400AF5C11 /* DisplayText.cpp */,
+				0268B5DE1B4E46C400AF5C11 /* DisplayText.h */,
+			);
+			name = DisplayText;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0268B5D91B4D0D8600AF5C11 /* Visualize.cpp in Sources */,
+				0268B5DF1B4E46C400AF5C11 /* DisplayText.cpp in Sources */,
 				0268B5AE1B4B7FCF00AF5C11 /* main.cpp in Sources */,
 				0268B5C31B4BB25500AF5C11 /* Particle.cpp in Sources */,
 				0268B5C71B4BC49C00AF5C11 /* Enclosure.cpp in Sources */,

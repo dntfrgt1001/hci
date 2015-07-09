@@ -9,11 +9,12 @@
 #include "Particle.h"
 
 
-Particle::Particle(b2World& world, int x, int y, int radius)
+Particle::Particle(b2World& world, int initX, int initY, int radius,
+                   int initV)
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set((float)x / pixel, (float)y / pixel);
+    bodyDef.position.Set((float)initX / pixel, (float)initY / pixel);
     body = world.CreateBody(&bodyDef);
     b2CircleShape circleShape;
     circleShape.m_radius = (float)radius / pixel;
@@ -24,6 +25,9 @@ Particle::Particle(b2World& world, int x, int y, int radius)
     fixtureDef.restitution = 1.0f;
     fixture = body->CreateFixture(&fixtureDef);
     
+    int axisV = initV / sqrt(2);
+    std::cout << "axisV = " << axisV << std::endl;
+    setVelocity(axisV, axisV);
     color = cv::Scalar(255, 0, 0);
 }
 
@@ -35,7 +39,7 @@ Particle::~Particle()
 
 void Particle::setVelocity(int velocityX, int velocityY)
 {
-    b2Vec2 newV(velocityX / pixel, velocityY / pixel);
+    b2Vec2 newV((float)velocityX / pixel, (float)velocityY / pixel);
     body->SetLinearVelocity(newV);
 }
 
@@ -67,7 +71,7 @@ void Particle::draw(cv::Mat& img)
                getRadius(), cv::Scalar(0, 0, 0), 3, 8, 0);
 }
 
-void Particle::velocityCollection(std::vector<Particle*>& parts, int partVelocity)
+void Particle::velocityCorrection(std::vector<Particle*>& parts, int partVelocity)
 {
     float energy = 0.0f;
     
