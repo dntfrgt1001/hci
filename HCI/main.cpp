@@ -57,7 +57,6 @@ int main(int argc, const char * argv[])
     float32 timeStep = 1.0f/60.0f;
     int32 velocityIterations = 8;
     int32 positionIterations = 3;
-    
     b2Vec2 gravity(0.0f, 0.0f);
     b2World world(gravity);
     
@@ -67,15 +66,24 @@ int main(int argc, const char * argv[])
     cv::Mat img;
     cv::namedWindow("window", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
     
-    
     std::vector<Visualize*> vis;
-    int number = 4;
+    int number = 5;
     for(int i=0; i<number; i++){
+        cv::Scalar color;
+        
+        switch (i%3) {
+            case 0: color = cv::Scalar(255, 0, 0); break;
+            case 1: color = cv::Scalar(0, 255, 0); break;
+            case 2: color = cv::Scalar(0, 0, 255); break;
+            default: color = cv::Scalar(255, 255, 255); break;
+        }
+        
         vis.push_back(new Visualize(world, info[i][0], info[i][1],
-                                   width*i/number+width/number/2,
-                                    height/2, 5, 150));
-        //Visualize vi(world, info[0][0], info[0][1], width/2, height/2, 10, 150);
+                                    width*i/number+width/number/2,
+                                    height/2, 5, 150, color));
     }
+    
+    cv::waitKey(-1);
     
     for(int i=0; i<10; i++)
         world.Step(timeStep, velocityIterations, positionIterations);

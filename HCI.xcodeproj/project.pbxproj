@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0245D8321B500A1900386AB2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0245D8311B500A1900386AB2 /* main.cpp */; };
+		0245D8361B500BB700386AB2 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */; };
+		0245D8371B500BBB00386AB2 /* libopencv_highgui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B81B4B824500AF5C11 /* libopencv_highgui.dylib */; };
+		0245D8381B500BBE00386AB2 /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5BA1B4B824D00AF5C11 /* libopencv_imgproc.dylib */; };
 		0268B5AE1B4B7FCF00AF5C11 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0268B5AD1B4B7FCF00AF5C11 /* main.cpp */; };
 		0268B5B51B4B822100AF5C11 /* libBox2D.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B41B4B822100AF5C11 /* libBox2D.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		0268B5B71B4B823B00AF5C11 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */; };
@@ -20,6 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0245D82D1B500A1900386AB2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		0268B5A81B4B7FCF00AF5C11 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0245D82F1B500A1900386AB2 /* HCI2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HCI2; sourceTree = BUILT_PRODUCTS_DIR; };
+		0245D8311B500A1900386AB2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0268B5AA1B4B7FCF00AF5C11 /* HCI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HCI; sourceTree = BUILT_PRODUCTS_DIR; };
 		0268B5AD1B4B7FCF00AF5C11 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0268B5B41B4B822100AF5C11 /* libBox2D.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libBox2D.dylib; path = ../../../../usr/local/Cellar/box2d/2.3.0/lib/libBox2D.dylib; sourceTree = "<group>"; };
@@ -51,6 +66,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0245D82C1B500A1900386AB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0245D8381B500BBE00386AB2 /* libopencv_imgproc.dylib in Frameworks */,
+				0245D8361B500BB700386AB2 /* libopencv_core.dylib in Frameworks */,
+				0245D8371B500BBB00386AB2 /* libopencv_highgui.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0268B5A71B4B7FCF00AF5C11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0245D8301B500A1900386AB2 /* HCI2 */ = {
+			isa = PBXGroup;
+			children = (
+				0245D8311B500A1900386AB2 /* main.cpp */,
+			);
+			path = HCI2;
+			sourceTree = "<group>";
+		};
 		0268B5A11B4B7FCF00AF5C11 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +106,7 @@
 				0268B5B61B4B823B00AF5C11 /* libopencv_core.dylib */,
 				0268B5B41B4B822100AF5C11 /* libBox2D.dylib */,
 				0268B5AC1B4B7FCF00AF5C11 /* HCI */,
+				0245D8301B500A1900386AB2 /* HCI2 */,
 				0268B5AB1B4B7FCF00AF5C11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				0268B5AA1B4B7FCF00AF5C11 /* HCI */,
+				0245D82F1B500A1900386AB2 /* HCI2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +181,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0245D82E1B500A1900386AB2 /* HCI2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0245D8331B500A1900386AB2 /* Build configuration list for PBXNativeTarget "HCI2" */;
+			buildPhases = (
+				0245D82B1B500A1900386AB2 /* Sources */,
+				0245D82C1B500A1900386AB2 /* Frameworks */,
+				0245D82D1B500A1900386AB2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HCI2;
+			productName = HCI2;
+			productReference = 0245D82F1B500A1900386AB2 /* HCI2 */;
+			productType = "com.apple.product-type.tool";
+		};
 		0268B5A91B4B7FCF00AF5C11 /* HCI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0268B5B11B4B7FCF00AF5C11 /* Build configuration list for PBXNativeTarget "HCI" */;
@@ -172,6 +224,9 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = masakazu;
 				TargetAttributes = {
+					0245D82E1B500A1900386AB2 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					0268B5A91B4B7FCF00AF5C11 = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -190,11 +245,20 @@
 			projectRoot = "";
 			targets = (
 				0268B5A91B4B7FCF00AF5C11 /* HCI */,
+				0245D82E1B500A1900386AB2 /* HCI2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0245D82B1B500A1900386AB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0245D8321B500A1900386AB2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0268B5A61B4B7FCF00AF5C11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +275,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0245D8341B500A1900386AB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/local/Cellar/opencv/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/opencv/2.4.11_1/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0245D8351B500A1900386AB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/usr/local/Cellar/opencv/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/opencv/2.4.11_1/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		0268B5AF1B4B7FCF00AF5C11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +427,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0245D8331B500A1900386AB2 /* Build configuration list for PBXNativeTarget "HCI2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0245D8341B500A1900386AB2 /* Debug */,
+				0245D8351B500A1900386AB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0268B5A51B4B7FCF00AF5C11 /* Build configuration list for PBXProject "HCI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

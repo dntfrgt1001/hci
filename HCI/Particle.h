@@ -20,7 +20,8 @@ class Particle
 {
 public:
     Particle(){};
-    Particle(b2World& world, int initX, int initY, int radius, int initV);
+    Particle(b2World& world, int radius, int initX, int initY, int initV,
+             cv::Scalar* color);
     ~Particle();
     void setVelocity(int velocityX, int velocityY);
     b2Vec2 getPosition();
@@ -29,7 +30,8 @@ public:
     void draw(cv::Mat& img);
     static void velocityCorrection(std::vector<Particle*>& parts, int partVelocity);
 private:
-    cv::Scalar color;
+    int radius;
+    cv::Scalar* color;
     b2Body* body;
     b2Fixture* fixture;
 };

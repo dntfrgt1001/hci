@@ -20,7 +20,7 @@ class Visualize
 public:
     Visualize(){};
     Visualize(b2World& world, int pid, int number,
-              int x, int y, int partRadius, int partV);
+              int x, int y, int partRadius, int partV, cv::Scalar color);
     ~Visualize();
     void draw(cv::Mat& img);
     void velocityCorrection();
@@ -32,6 +32,7 @@ private:
     int y;
     int radius;
     int partV;
+    cv::Scalar color;
     Enclosure* enc;
     std::vector<Particle*> parts;
     DisplayText* dt;

@@ -9,8 +9,9 @@
 #include "Particle.h"
 
 
-Particle::Particle(b2World& world, int initX, int initY, int radius,
-                   int initV)
+Particle::Particle(b2World& world, int radius, int initX,
+                   int initY, int initV, cv::Scalar* color)
+: radius(radius), color(color)
 {
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
@@ -26,9 +27,8 @@ Particle::Particle(b2World& world, int initX, int initY, int radius,
     fixture = body->CreateFixture(&fixtureDef);
     
     int axisV = initV / sqrt(2);
-    std::cout << "axisV = " << axisV << std::endl;
+ //   std::cout << "axisV = " << axisV << std::endl;
     setVelocity(axisV, axisV);
-    color = cv::Scalar(255, 0, 0);
 }
 
 Particle::~Particle()
@@ -45,7 +45,8 @@ void Particle::setVelocity(int velocityX, int velocityY)
 
 int Particle::getRadius()
 {
-    return (int)(fixture->GetShape()->m_radius * pixel);
+    //return (int)(fixture->GetShape()->m_radius * pixel);
+    return radius;
 }
 
 b2Vec2 Particle::getPosition()
@@ -66,7 +67,7 @@ void Particle::draw(cv::Mat& img)
 {
     b2Vec2 position = getPosition();
     cv::circle(img, cv::Point(position.x, position.y),
-               getRadius(), color, -1, 8, 0);
+               getRadius(), *color, -1, 8, 0);
     cv::circle(img, cv::Point(position.x, position.y),
                getRadius(), cv::Scalar(0, 0, 0), 3, 8, 0);
 }
